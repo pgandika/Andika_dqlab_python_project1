@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project Machine Learning with Python Building Recommender System</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<h1><strong>Project Machine Learning with Python Building Recommender System</strong>
+				</div>
+				<div class="inner">
+					<a href="https://pgandika.github.io/Andika_Gumilang_Portfolio/"class="button small">Home</a>
+					<a href="https://pgandika.github.io/Andika_Gumilang_Portfolio/"class="button small">Projects</a>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1><Strong>Project Machine Learning with Python Building Recommender System</Strong></h1>
+						</header>
+						<br>
+						<div class="row gtr-50 gtr-uniform">
+								<div class="col-7"><span class="image fit"><img src="images/mrs.jpg"></span></div><div class="col-4"><span class="image fit"><img src="images/python_logo.png"></span></div>
+							</div><br>
+						
+						<h2><strong>Project Summary</strong></h2>
+						<p>Improving the Understanding of Python function to help read, gather, manipulate, and analyze the data and generate useful insights to drive an informed decision-making process, and this 4 main things that I did in this project :</p>
+						<ol>
+							<li>Conducted data cleaning and preparation.</li>
+							<li>Conducted exploratory data such as data aggregation, descriptive statistic, analyzing using visualization</li>
+							<li>Created Recommendation system using Python </li>
+							<li>Created the insights for the project </li>
+					  	</ol>
+						  <p><h2>Project Files</h2></p>
+						  For a more comprehensive analysis and visualization, please open the project files.
+						  <ul>
+							  <li><a href="https://colab.research.google.com/drive/1FQtSKJg_DKQpDpo4q7Mh5urV1aYByEWm?usp=sharing">Google Colab</a></li>
+							  <li><a href="https://github.com/pgandika/RevoU-SQL-Project">Github Repository</a></li>
+						  </ul>
+						<br>
+					</section>
+					<section>
+						<h2><strong>Project Background & Dataset</strong></h2>
+						<h3>Project Background</h3>
+							<p>We will create a recommendation system using Python, the data we will use here is a movie database from imdb complete with metadata, In this case, we will use a combination of average rating, number of votes, and form a new metric from an existing metric, then we will sort this metric from highest to lowest.</p>
+					
+						<h3>Dataset :<a href="https://console.cloud.google.com/bigquery?sq=846791540182:ae10efc2fca04689adb5d2f63af7861a">Dataset 1</a></h3>
+							<p>Contains details of the movies / films, including movies / films title, year release, runtimes , genre etc</p>
+							<div class="row gtr-50 gtr-uniform">
+								<div class="col-7"><span class="image fit"><img src="images/f1.JPG"></span></div>
+							</div>
+							<h3>Dataset :<a href=" https://storage.googleapis.com/dqlab-dataset/title.ratings.tsv">Dataset 2</a></h3>
+								<p>Contains Movies rating details</p>
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-4"><span class="image fit"><img src="images/f2.JPG"></span></div>
+								</div>
+						<p><h2>Project Files</h2></p>
+						For a more comprehensive analysis and visualization, please open the project files.
+						<ul>
+							<li><a href="https://console.cloud.google.com/bigquery?sq=846791540182:ae10efc2fca04689adb5d2f63af7861a">Query Code - Google BigQuery</a></li>
+							<li><a href="https://github.com/pgandika/RevoU-SQL-Project">Github Repository</a></li>
+						</ul>
+					</section>
+
+				<!-- Four -->
+				<section id="four">
+						<p><b>1.Cleaning on the movie_df . table</b></p>
+						<p>first of all we have to check data type and other information of each column in the movie table (movie_df)</p>
+						<script src="https://pastebin.com/embed_js/LCSzTaaH?theme=dark""></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4"><span class="image fit"><img src="images/f3.JPG"></span></div>
+						</div>
+						<p><br>total data is 9025, but for primaryTitle, originalTitle and genres have some Null values. So it is necessary to do cleaning on the column.</p>
+						<p><b>1.1 Checking NULL Values movie_df . table </b></p>
+						<p>the next thing we will do is check whether there is NULL value data in each column in the movie table (movie_df)</p>
+						<script src="https://pastebin.com/embed_js/7pPWNvPx?theme=dark""></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4"><span class="image fit"><img src="images/f4.JPG"></span></div>
+						</div>
+						<p><br>it is known that the primaryTitle and originalTitle columns have a lot of data that are NULL values.</p>
+						<br>
+						<p><b>1.2 Analysis with NULL value data movie_df . table </b></p>
+							<p>The next thing we will do is check the data form of the primaryTitle and originalTitle columns which have NULL values, whether one or both of the columns in question have NULL data.</p>
+							<div class="row gtr-50 gtr-uniform">
+								<div class="col-7"><span class="image fit"><img src="images/f5.jpg"></span></div>
+							</div>
+						<p><br>it can be seen that all the data has no title and we can discard the data.</p>
+						<br>
+						<p><b>1.3 Discarding Data with NULL Value movie_df . table </b></p>
+							<p>The next thing we will do is to remove the data with the NULL value and see the amount of data that exists after the NULL data is discarded.</p>
+							<script src="https://pastebin.com/embed_js/auhdbMyE?theme=dark"></script><br>
+							<p>this will bring up the total data remaining only 9011 of the previous 9025 data.</p>
+
+							<br>
+							<p><b>1.4 Analysis with NULL value data movie_df . table </b></p>
+								<p>In addition to the 'primaryTitle' and 'originalTitle' columns, there are other columns that have NULL data. The column is the 'genres' column
+									Next, we're going to do the same thing as we did with the 'primaryTitle' and 'originalTitle' columns.
+									<br>
+									Check the data form of the genres column which is NULL.</p>
+									<script src="https://pastebin.com/embed_js/wFAPYVCE?theme=dark"></script><br> 
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-7"><span class="image fit"><img src="images/f6.jpg"></span></div>
+								</div>
+							<p><br>it can be seen that all data has no title and we can discard the data</p>
+
+							<br>
+						<p><b>1.5 Discarding genre data with NULL values in movie_df . table </b></p>
+							<p>The next thing we will do is discard the data with the NULL value and see the amount of data that exists after the NULL data is discarded.</p>
+							<script src="https://pastebin.com/embed_js/gY6aKiTP?theme=dark"></script><br>
+							<p>this will bring up the total data remaining only 9000 of the previous 9011 data.</p>
+
+						<p><br>to discard the data in the primaryTitle and originalTitle columns can be as follows:</p>
+						<script src="https://pastebin.com/embed_js/gY6aKiTP?theme=dark"></script><br>
+						<p>this will bring up the total data remaining only 9011 of the previous 9025 data.</p>
+
+						<p><b>1.6 Changing Value '\\N' in movie_df . table </b></p>
+						<p>If we look at the columns 'startYear' , 'endYear', and 'runtimeMinutes', there is data with the value '\\N' which means NULL.
+							<br>
+							The next thing we're going to do is change the value of the \\\N to np.nan and cast the startYear, endYear, and runtimeMinutes columns to float64.</p>
+							<script src="https://pastebin.com/embed_js/3F8CS9NK?theme=dark"></script><br>
+							<div class="row gtr-50 gtr-uniform">
+								<div class="col-4"><span class="image fit"><img src="images/f7.JPG"></span></div>
+							</div>
+							<br>
+							<p><b>1.7 Change the genres value to a list in movie_df . table </b></p>
+							<p>we will create a function called transform_to_list to convert the genre value to a list.</p>
+								<script src="https://pastebin.com/embed_js/rvmtSrNh?theme=dark"></script><br>
+
+						<p><b>2.Cleaning on the rating_df . table </b></p>
+						<p>we have to check data type and other information of each column in the rating table (rating_df)</p>
+						<script src="https://pastebin.com/embed_js/fVP8LgnV?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4"><span class="image fit"><img src="images/f8.JPG"></span></div>
+						</div>
+						<br><p>on the rating data does not have null value data.</p>
+
+						<p><b>3.Inner Join movie table and rating table </b></p>
+						<p>Let's do an inner join between rating_df and movie_df to get the rating for each available movie, then display the top 5 data and data types from each column.</p>
+						<script src="https://pastebin.com/embed_js/E1y2d2pD?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit"><img src="images/f9.jpg"></span></div>
+						</div>
+						<br><p>on the rating data does not have null value data.</p>
+
+						<p><b>4. Reduce table size </b></p>
+						<p>The next thing we will do is reduce the table size by removing all NULL values from the startYear and runtimeMinutes columns because it makes no sense if the film is not known when the release year and duration are.</p>
+						<script src="https://pastebin.com/embed_js/pbgeK23R?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-4"><span class="image fit"><img src="images/f10.JPG"></span></div>
+						</div>
+						<br>
+
+						<p><b>5.IMDB Formula with Weighted Rating  </b></p>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-7"><span class="image fit"><img src="images/f11.JPG"></span></div>
+						</div>
+						<br>
+						<p>
+							<li>v: the number of votes for the film</li>
+							<li>m: the minimum number of votes needed to enter the chart</li>
+							<li>R: average rating of the film</li>
+							<li>C: the average number of votes from the entire film universe</li>
+							
+							
+						</p>
+
+						<p><b>5.1 The Value of "C"</b></p>
+						<p>The first thing we will look for is the value of C which is the average of the averageRating</p>
+						<script src="https://pastebin.com/embed_js/MsZRLHtV?theme=dark"></script><br>
+						<p>this will bring up C = 6.829581673306773.</p>
+						<br>
+						<p><b>5.2 The Value of "m"</b></p>
+						<p>Let's take the example of a film with numVotes above 80% of the population, so the population we will take is only 20%.</p>
+						<script src="https://pastebin.com/embed_js/KbWR0D7U?theme=dark"></script><br>
+						<p>this will bring up m = 229.0</p>
+						<br>
+						<p><b>5.3 create a weighted formula function</b></p>
+						<p>Next we have to create a function using a dataframe as a variable.</p>
+						<script src="https://pastebin.com/embed_js/jbbvqpCS?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-7"><span class="image fit"><img src="images/f12.JPG"></span></div>
+						</div>
+						<br>
+						<p><b>5.4 create a simple recommender system</b></p>
+						<p> There has been an additional 'score' field. Then we will filter numVotes that are more than m then sort the scores from highest to lowest to take the values of some of the top values.</p>
+						<script src="https://pastebin.com/embed_js/WgKmLg11?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit"><img src="images/f13.jpg"></span></div>
+						</div>
+						<br>
+
+						<p><b>5.5 create a simple recommender system with user preferences</b></p>
+						<p> From the tasks that have been done previously, it can be seen now that the list of films has been sorted from the highest score to the lowest. Films with a high average rating do not always get a higher position than films with a lower average rating, this is because we also factor in the number of votes
+							This recommendation system can still be improved by adding specific filters about titleType, startYear, or other filters
+							
+							<br>
+							The next job we will do is create a function to filter based on isAdult, startYear, and genres.</p>
+						<script src="https://pastebin.com/embed_js/QYuaHDyW?theme=dark"></script><br>
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit"><img src="images/f14.jpg"></span></div>
+						</div>
+						<br>
+						
+					</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/andika-gumilang-6aa09b113/" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/pgandika" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:andikapg19@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Andika Putra G</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
